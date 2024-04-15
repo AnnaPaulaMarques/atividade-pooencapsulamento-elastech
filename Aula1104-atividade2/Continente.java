@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Continente {
     private String nome;
-    private List<Pais> paisesContinentes = new ArrayList<>();
+    private ArrayList<Pais> paisesContinentes = new ArrayList<>();
     private double dimensaoTotal;
     private double populacaoTotal;
     private double densidadePopulacional;
@@ -47,11 +47,11 @@ public class Continente {
         this.nome = nome;
     }
 
-    public List<Pais> getPaisesContinentes() {
+    public ArrayList<Pais> getPaisesContinentes() {
         return paisesContinentes;
     }
 
-    public void setPaisesContinentes(List<Pais> paisesContinentes) {
+    public void setPaisesContinentes(ArrayList<Pais> paisesContinentes) {
         this.paisesContinentes = paisesContinentes;
     }
 
@@ -126,7 +126,6 @@ public class Continente {
     public String toString() {
         return "Continente{" +
                 "nome='" + nome + '\'' +
-                ", paisesContinentes=" + paisesContinentes +
                 ", dimensaoTotal=" + dimensaoTotal +
                 ", populacaoTotal=" + populacaoTotal +
                 ", densidadePopulacional=" + densidadePopulacional +

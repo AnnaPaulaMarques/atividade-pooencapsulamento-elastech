@@ -13,6 +13,8 @@ package Atividade2aula1104;
 //        i) Um método que retorne o país de menor dimensão territorial no continente;
 //        j) Um método que retorne a razão territorial do maior pais em relação ao menor país.
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -20,9 +22,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-
-
-        System.out.println("Agora me diga seu continente:");
+        System.out.println("Olá! Qual continente:");
         String continente = scanner.nextLine();
 
         System.out.println("Qual a dimensão do continente:");
@@ -61,15 +61,32 @@ public class Main {
                 new Pais(menorDimensaoTerritorialPais),
                 razaoterritorial);
 
-        System.out.println("Olá! Por favor, digite o nome de um país que você gostaria de adicionar ao continente:");
-        String nomePais = scanner.nextLine();
-        scanner.nextLine();
+        String resposta = "sim";
+        while (resposta.equalsIgnoreCase("sim")) {
+            System.out.println("Digite o nome de um país que você gostaria de adicionar ao continente:");
+            String nomePais = scanner.next();
+            continente1.addPais(new Pais(nomePais));
+            scanner.nextLine();
 
-        continente1.addPais(new Pais(nomePais));
+            System.out.println("Deseja adicionar outro país? (sim/não)");
+            resposta = scanner.next();
+            scanner.nextLine();
+        }
 
+        System.out.println("Lista de países: ");
+
+        ArrayList<Pais> lista = continente1.getPaisesContinentes();
+
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println(lista.get(i).getNome()) ;
+        }
         System.out.println(continente1.toString());
-
-
     }
+
+
 }
+
+
+
+
 
